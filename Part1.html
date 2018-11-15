@@ -1,0 +1,62 @@
+<HTML>
+
+<!-- Style -->
+<h1>Module 5 | Part 1</h1>
+<script type="text/javascript">document.write("<p>Insert any word or phrase below:</p>")</script>
+
+<p>
+<form>
+    <input id="textbox" type="text" size="20" placeholder="any word">
+    <input type="button" value="Reverse" onClick="reverseString();">
+</form>
+</p>
+
+<div id="reversed_output"></div>
+<br>
+
+<a href="https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb"> Source: "Three Ways to Reverse a String in JavaScript"</a>
+<br>
+<br>
+
+<script type="text/javascript">document.write("<p>Insert any integer below:</p>")</script>
+<p>
+<form>
+    <input id="numbox" type="num" size="15" placeholder="any integer">
+    <input type="button" value="Show Table" onClick="integerArray();">
+</form>
+</p>
+
+<div id="mult_table"></div>
+<br>
+
+<a href="https://stackoverflow.com/questions/2324782/how-to-use-createelement-to-create-a-new-table"> Source: "How to use createElement to create a new table"</a>
+
+
+<!-- Formulas -->
+<script type="text/javascript">
+
+function reverseString() {
+	str = document.getElementById("textbox").value
+	revStr = str.split("").reverse().join("")
+	document.getElementById("reversed_output").innerHTML = "In reverse: " + revStr
+}
+
+function integerArray() {
+	inNum = document.getElementById("numbox").value
+	table = document.createElement('table')
+	pos = 0
+
+	for (row = 1; row <= 5; row++) {
+		newRow = table.insertRow()
+		for (col = 1; col <= 4; col++) {
+			newCell = newRow.insertCell()
+			newCell.innerHTML = inNum*(pos+1)
+			pos++
+		}
+	}
+	document.getElementById("mult_table").innerHTML="";
+	document.getElementById("mult_table").appendChild(table);
+}
+</script>
+
+</HTML>
